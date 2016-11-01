@@ -22,7 +22,8 @@
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
 	<script src="js/routes.js"></script>
-	
+
+
 	<script>
 
 	</script>
@@ -31,17 +32,57 @@
 <body ng-app="myResponsiveApp">
 
 <div class="w3-top">
-	<div ui-view="navigation"></div>
-	<div ui-view="nav-side"></div>
+	<!-- Navbar (sit on top) -->
+	<ul class="w3-navbar" id="myNavbar">
+		<li class="w3-hide-small">
+			<a href="#home" class="w3-wide">THE JORGE LOPEZ</a>
+		</li>
+		<!-- Float links to the right -->
+		<li class="w3-right w3-hide-small w3-dropdown-hover">
+			<a href="#">ABOUT JORGE<i class="fa fa-caret-down"></i></a>
+			<div class="w3-dropdown-content w3-white w3-card-4">
+				<a ui-sref="home.about">Bio</a>
+				<a href="#team">Education</a>
+				<a href="#contact">Contact</a>
+			</div>
+		</li>
+		<li class="w3-right w3-hide-small"><a href="#resume">RESUME</a></li>
+		<li class="w3-right w3-hide-small"><a href="#code">CODE</a></li>
+		<li class="w3-right w3-hide-small"><a ui-sref="projects">PROJECTS</a></li>
+
+		<!-- Hide right-floated links on small screens and replace them with a menu icon -->
+		<li>
+			<a href="javascript:void(0)" class="w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+				<i class="fa fa-bars w3-padding-right w3-padding-left"></i>
+			</a>
+		</li>
+	</ul>
 </div>
+
+<!-- Sidenav on small screens when clicking the menu icon -->
+	<nav class="w3-sidenav w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidenav">
+		<a href="javascript:void(0)" onclick="w3_close()" class="w3-large w3-padding-16">Close x</a>
+		<a href="/projects">PROJECTS</a>
+		<a href="#code">CODE</a>
+		<a href="#resume">RESUME</a>
+		<div class="w3-dropdown-hover">
+			<a href="#">ABOUT JORGE<i class="fa fa-caret-down"></i></a>
+			<div class="w3-dropdown-content w3-white w3-card-4">
+				<a href="about">Bio</a>
+				<a href="#team">Education</a>
+				<a href="#contact">Contact</a>
+			</div>
+		</div>
+	</nav>
+
 
 <div class="bgimg-1 w3-display-container w3-grayscale-min" id="home" ui-view="header"></div>
 
 <div class="w3-main" ui-view="mainContent"></div>
 
 <div ng-include="'templates/promo.html'"></div>
-
-<div id="about" ng-include="'templates/about.html'"></div>
+<div class="w3-grayscale-min" id="about" ui-view="about"></div>
+<!-- div id="about" ng-include="'templates/about.html'"></div -->
 
 
 
@@ -49,6 +90,7 @@
 
 <!--Javascript Frameworks Go here -->
 <script src="js/w3css.js"></script>
+
 
 </body>
 

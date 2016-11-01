@@ -1,29 +1,41 @@
 <!-- Navbar (sit on top) -->
-	<ul class="w3-navbar" id="myNavbar">
-		<li class="w3-hide-small">
-			<a href="#home" class="w3-wide">LOGO</a>
-		</li>
-		<!-- Float links to the right -->
-		<li class="w3-right w3-hide-small w3-dropdown-hover">
-			<a href="#">ABOUT JORGE<i class="fa fa-caret-down"></i></a>
-			<div class="w3-dropdown-content w3-white w3-card-4">
-				<a ui-sref="home.about">Bio</a>
-				<a href="#team">Education</a>
-				<a href="#contact">Contact</a>
-			</div>
-		</li>
-		<li class="w3-right w3-hide-small"><a href="#resume">RESUME</a></li>
-		<li class="w3-right w3-hide-small"><a href="#code">CODE</a></li>
-		<li class="w3-right w3-hide-small"><a ui-sref="home.projects">PROJECTS</a></li>
-
+<ul class="w3-navbar" id="myNavbar">
+	<li class="w3-hide-small">
+		<a href="#home" class="w3-wide">THE JORGE LOPEZ</a>
+	</li>
+	<!-- Float links to the right -->
+	<li class="w3-right w3-hide-small w3-dropdown-hover">
+		<a href="#">ABOUT JORGE<i class="fa fa-caret-down"></i></a>
+		<div class="w3-dropdown-content w3-white w3-card-4">
+			<a ui-sref="home.about">Bio</a>
+			<a href="#team">Education</a>
+			<a href="#contact">Contact</a>
+		</div>
+	</li>
+	<li class="w3-right w3-hide-small"><a href="#resume">RESUME</a></li>
+	<li class="w3-right w3-hide-small"><a href="#code">CODE</a></li>
+	<li class="w3-right w3-hide-small"><a ui-sref="projects">PROJECTS</a></li>
 
 		<!-- Hide right-floated links on small screens and replace them with a menu icon -->
-		<li>
-			<a href="javascript:void(0)" class="w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-				<i class="fa fa-bars w3-padding-right w3-padding-left"></i>
-			</a>
-		</li>
-	</ul>
-
-
+	<li>
+		<a href="javascript:void(0)" class="w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+			<i class="fa fa-bars w3-padding-right w3-padding-left"></i>
+		</a>
+	</li>
+</ul>
+<!-- Sidenav on small screens when clicking the menu icon -->
+<nav class="w3-sidenav w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidenav">
+	<a href="javascript:void(0)" onclick="w3_close()" class="w3-large w3-padding-16">Close x</a>
+	<a href="/projects">PROJECTS</a>
+	<a href="#code">CODE</a>
+	<a href="#resume">RESUME</a>
+	<div class="w3-dropdown-hover">
+		<a href="#">ABOUT JORGE<i class="fa fa-caret-down"></i></a>
+		<div class="w3-dropdown-content w3-white w3-card-4">
+			<a href="/about">Bio</a>
+			<a href="#team">Education</a>
+			<a href="#contact">Contact</a>
+		</div>
+	</div>
+</nav>
 

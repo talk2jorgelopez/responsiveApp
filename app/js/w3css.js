@@ -1,10 +1,3 @@
-// Modal Image Gallery
-function onClick(element) {
-	document.getElementById("img01").src = element.src;
-	document.getElementById("modal01").style.display = "block";
-	var captionText = document.getElementById("caption");
-	captionText.innerHTML = element.alt;
-}
 
 // Change style of navbar on scroll
 window.onscroll = function() {myFunction()};
@@ -31,4 +24,11 @@ function w3_open() {
 // Close the sidenav with the close button
 function w3_close() {
 	mySidenav.style.display = "none";
+}
+// Modal Image Gallery
+function onClick(element) {
+	document.getElementById("img01").src = element.src;
+	document.getElementById("modal01").style.display = "block";
+	var captionText = document.getElementById("caption");
+	captionText.innerHTML = element.alt;
 }

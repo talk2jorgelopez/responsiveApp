@@ -1,5 +1,3 @@
-var mainCtrl = angular.module('mainCtrl', []);
+myApp.controller('promoCtrl', function($scope) {});
 
-myApp.controller('aboutCtrl', function($scope) {
-
-});
+myApp.controller('aboutCtrl', function($scope) {});
