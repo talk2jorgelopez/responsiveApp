@@ -1,8 +1,11 @@
 <!-- About Section -->
 <div class="w3-container w3-light-grey">
 	<ul class="w3-navbar">
-		<li><a href="javascript:void(0)" onclick="openCity('London')">Bio</a></li>
-		<li><a href="javascript:void(0)" onclick="openCity('Paris')">Education</a></li>
-		<li><a href="javascript:void(0)" onclick="openCity('Tokyo')">Contact</a></li>
+		<li><a ui-sref="about.bio">Bio</a></li>
+		<li><a ui-sref="about.bio">Education</a></li>
+		<li><a ui-sref="about.bio">Contact</a></li>
 	</ul>
 </div>
+<div class="w3-grayscale-min" id="about-bio" ui-view="about.bio"></div>
+<div class="w3-grayscale-min" id="about-edu" ui-view="about.edu"></div>
+<div class="w3-grayscale-min" id="about-contact" ui-view="about.contact"></div>

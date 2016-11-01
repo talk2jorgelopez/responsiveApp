@@ -22,7 +22,8 @@
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
 	<script src="js/routes.js"></script>
-	
+
+
 	<script>
 
 	</script>
@@ -31,24 +32,60 @@
 <body ng-app="myResponsiveApp">
 
 <div class="w3-top">
-	<div ui-view="navigation"></div>
-	<div ui-view="nav-side"></div>
+	<!-- Navbar (sit on top) -->
+	<ul id="myNavbar" class="w3-navbar">
+		<li class="w3-hide-small">
+			<a href="#home" class="w3-wide">THE JORGE LOPEZ</a>
+		</li>
+		<!-- Float links to the right -->
+		<li class="w3-right w3-hide-small"><a href="#bio">ABOUT JORGE</a></li>
+		<li class="w3-right w3-hide-small"><a href="#resume">RESUME</a></li>
+		<li class="w3-right w3-hide-small"><a href="#skills">SKILLS</a></li>
+		<li class="w3-right w3-hide-small"><a href="#code">CODE</a></li>
+		<li class="w3-right w3-hide-small"><a href="#projects">PROJECTS</a></li>
+
+		<!-- Hide right-floated links on small screens and replace them with a menu icon -->
+		<li>
+			<a href="javascript:void(0)" class="w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+				<i class="fa fa-bars w3-padding-right w3-padding-left"></i>
+			</a>
+		</li>
+	</ul>
 </div>
+	<!-- Sidenav on small screens when clicking the menu icon -->
+	<nav id="mySidenav" class="w3-sidenav w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" >
+		<a href="javascript:void(0)" onclick="w3_close()" class="w3-large w3-padding-16">Close x</a>
+		<a ui-sref="#bio">ABOUT JORGE</a>
+		<a ui-sref="#projects">PROJECTS</a>
+		<a ui-sref="#skills">SKILLS</a>
+		<a ui-sref="#code">CODE</a>
+		<a ui-sref="#resume">RESUME</a>
+	</nav>
 
 <div class="bgimg-1 w3-display-container w3-grayscale-min" id="home" ui-view="header"></div>
 
-<div class="w3-main" ui-view="mainContent"></div>
+<div id="main" class="w3-main" ui-view="mainContent"></div>
 
-<div ng-include="'templates/promo.html'"></div>
+<div id="bio" ui-view="bio"></div>
 
-<div id="about" ng-include="'templates/about.html'"></div>
+<div id="projects" ui-view="projects"></div>
+
+<div id="skills" ui-view="skills"></div>
+
+<div id="code" ui-view="code"></div>
+
+<div id="resume" ui-view="resume"></div>
+
+
+<!-- div id="about" ng-include="'templates/about.html'"></div -->
 
 
 
 <div class="w3-center w3-black w3-padding-64" ui-view="footer"></div>
 
-<!--Javascript Frameworks Go here -->
+<!--Javascript Frameworks Go here  -->
 <script src="js/w3css.js"></script>
+
 
 </body>
 
