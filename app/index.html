@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Assignment | Responsive</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- External CSS Libraries Go Here -->
+	<link rel="stylesheet" href="lib/css/w3.css">
+	<link rel="stylesheet" href="lib/css/normalize.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+	<!-- Personal CSS Libraries Go Here -->
+	<link rel="stylesheet" href="css/responsiveApp.css">
+	
+	<!--Javascript APIs Go Here -->
+	<script src="lib/js/angular.js"></script>
+	<script src="lib/js/angular-ui-router.js"></script>
+	
+	<!-- Personal JavaScript -->
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/routes.js"></script>
+	
+	<script>
+
+	</script>
+</head>
+
+<body ng-app="myResponsiveApp">
+
+<div class="w3-top">
+	<div ui-view="navigation"></div>
+	<div ui-view="nav-side"></div>
+</div>
+
+<div class="bgimg-1 w3-display-container w3-grayscale-min" id="home" ui-view="header"></div>
+
+<div class="w3-main" ui-view="mainContent"></div>
+
+<div ng-view="'/templates/about.html'"></div>
+
+<div class="w3-center w3-black w3-padding-64" ui-view="footer"></div>
+
+<!--Javascript Frameworks Go here -->
+<script src="js/w3css.js"></script>
+
+</body>
+
+</html>
