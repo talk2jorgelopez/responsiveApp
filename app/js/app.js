@@ -20,13 +20,16 @@ myApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $
 					templateUrl: 'templates/promo/skills.html'
 				},
 				'code': {
-					templateUrl: 'templates/promo/team.html'
+					templateUrl: 'templates/promo/code.html'
 				},
 				'resume': {
 					templateUrl: 'templates/promo/resume.html'
 				},
 				'bio': {
 					templateUrl: 'templates/about/bio.html'
+				},
+				'edu': {
+					templateUrl: 'templates/about/education.html'
 				},
 				'footer': {
 					templateUrl: 'templates/footer.html'
