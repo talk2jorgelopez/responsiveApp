@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-	<title>Assignment | Responsive</title>
+	<title>Responsive Portfolio</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- External CSS Libraries Go Here -->
@@ -13,16 +13,15 @@
 
 	<!-- Personal CSS Libraries Go Here -->
 	<link rel="stylesheet" href="css/responsiveApp.css">
-	
+
 	<!--Javascript APIs Go Here -->
 	<script src="lib/js/angular.js"></script>
 	<script src="lib/js/angular-ui-router.js"></script>
-	
+
 	<!-- Personal JavaScript -->
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
 	<script src="js/routes.js"></script>
-
 
 	<script>
 
@@ -38,8 +37,8 @@
 			<a href="#home" class="w3-wide">THE JORGE LOPEZ</a>
 		</li>
 		<!-- Float links to the right -->
-		<li class="w3-right w3-hide-small"><a href="#bio">ABOUT JORGE</a></li>
-		<li class="w3-right w3-hide-small"><a href="#resume">RESUME</a></li>
+		<li class="w3-right w3-hide-small"><a ui-sref="bio">ABOUT JORGE</a></li>
+		<li class="w3-right w3-hide-small"><a ui-sref="resume">RESUME</a></li>
 		<li class="w3-right w3-hide-small"><a href="#skills">SKILLS</a></li>
 		<li class="w3-right w3-hide-small"><a href="#code">CODE</a></li>
 		<li class="w3-right w3-hide-small"><a href="#projects">PROJECTS</a></li>
@@ -52,34 +51,44 @@
 		</li>
 	</ul>
 </div>
-	<!-- Sidenav on small screens when clicking the menu icon -->
-	<nav id="mySidenav" class="w3-sidenav w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" >
-		<a href="javascript:void(0)" onclick="w3_close()" class="w3-large w3-padding-16">Close x</a>
-		<a ui-sref="#bio">ABOUT JORGE</a>
-		<a ui-sref="#projects">PROJECTS</a>
-		<a ui-sref="#skills">SKILLS</a>
-		<a ui-sref="#code">CODE</a>
-		<a ui-sref="#resume">RESUME</a>
-	</nav>
+<!-- Sidenav on small screens when clicking the menu icon -->
+<nav id="mySidenav" class="w3-sidenav w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" >
+	<a href="javascript:void(0)" onclick="w3_close()" class="w3-large w3-padding-16">Close x</a>
+	<a ui-sref="#bio">ABOUT JORGE</a>
+	<a ui-sref="#projects">PROJECTS</a>
+	<a ui-sref="#skills">SKILLS</a>
+	<a ui-sref="#code">CODE</a>
+	<a ui-sref="#resume">RESUME</a>
+</nav>
 
+<!-- About | Education Section here -->
 <div class="bgimg-1 w3-display-container w3-grayscale-min" id="home" ui-view="header"></div>
 
+<!-- About | Education Section here -->
 <div id="main" class="w3-main" ui-view="mainContent"></div>
 
+<!-- About | Education Section here -->
 <div id="bio" ui-view="bio"></div>
 
-<div id="projects" ui-view="projects"></div>
+<!-- About | Education Section here -->
+<div id="edu" ui-view="edu"></div>
 
-<div id="skills" ui-view="skills"></div>
-
-<div id="code" ui-view="code"></div>
-
+<!-- Promo | Resume Section here -->
 <div id="resume" ui-view="resume"></div>
 
+<!-- Promo | Skills Section here -->
+<div id="skills" ui-view="skills"></div>
+
+<!-- Promo | Code Section here -->
+<div id="code" ui-view="code"></div>
+
+<!-- Promo | Projects Section here -->
+<div id="projects" ui-view="projects"></div>
+
+<div id="projects2" ui-view="app.promo"></div>
+<div id="projects4" ui-view="app.presume"></div>
 
 <!-- div id="about" ng-include="'templates/about.html'"></div -->
-
-
 
 <div class="w3-center w3-black w3-padding-64" ui-view="footer"></div>
 
