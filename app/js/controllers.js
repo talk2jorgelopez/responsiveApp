@@ -8,4 +8,4 @@ angular.module('app.controllers', [])
 .controller('promoCtrl', ['$scope', '$stateParams',
 	function($scope) {
 	
-}])
+}]);

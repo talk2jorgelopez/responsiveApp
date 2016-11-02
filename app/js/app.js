@@ -1,17 +1,16 @@
-var myApp = angular.module('myResponsiveApp', ['ui.router']);
+var myApp = angular.module('myResponsiveApp', ['ui.router', 'app.controllers']);
 
 myApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise('/');
 	$stateProvider
 		.state('app', {
 			url: '/',
-			//abstract:true,
+			abstract:true,
 			views: {
 				'header': {
-					url: '/header',
 					templateUrl: 'templates/header.html'
 				},
-				'mainContent': {
+			   'mainContent': {
 					url: '/main',
 					templateUrl: 'templates/main.html'
 				},
@@ -40,33 +39,63 @@ myApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $
 					templateUrl: 'templates/promo/projects.html'
 				},
 				'footer': {
-					url: '/footer',
-					templateUrl: 'templates/footer.html'
+					templateUrl: 'templates/header.html'
+				},
+			}
+		})
+
+		.state('app.footer', {
+			templateUrl: 'templates/footer.html'
+		})
+		.state('about', {
+			url: '/about',
+			abstract: true,
+			views: {
+				'main': {
+					url: '/about/bio',
+					templateUrl: 'templates/about/bio.html',
+					controller: 'aboutCtrl'
+				},
+				'projects': {
+					url: '/about/education',
+					templateUrl: 'templates/promo/projects.html',
+					controller: 'aboutCtrl'
 				}
 			}
 		})
 
-		.state('app.promo', {
+		.state('promo', {
 			url: '/promo',
 			abstract: true,
 			views: {
-				'pprojects': {
+				'main': {
+					url: '/promo.html',
+					templateUrl: 'templates/promo/projects.html',
+					controller: 'promoCtrl'
+				},
+				'projects': {
 					url: '/promo/projects.html',
-					templateUrl: 'templates/promo/projects.html'
+					templateUrl: 'templates/promo/projects.html',
+					controller: 'promoCtrl'
 				},
-				'pskills': {
+				'skills': {
 					url: '/promo/skills',
-					templateUrl: 'templates/promo/skills.html'
+					templateUrl: 'templates/promo/skills.html',
+					controller: 'promoCtrl'
 				},
-				'presume': {
+				'resume': {
 					url: '/promo/resume',
-					templateUrl: 'templates/promo/resume.html'
+					templateUrl: 'templates/promo/resume.html',
+					controller: 'promoCtrl'
 				},
-				'pcode': {
+				'code': {
 					url: '/promo/code',
-					templateUrl: 'templates/promo/code.html'
+					templateUrl: 'templates/promo/code.html',
+					controller: 'promoCtrl'
 				}
 			}
-		})
+		});
+
 
 }]);
+

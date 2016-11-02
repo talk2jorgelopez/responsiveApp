@@ -6,9 +6,7 @@
 
 	<!-- External CSS Libraries Go Here -->
 	<link rel="stylesheet" href="lib/css/w3.css">
-	<link rel="stylesheet" href="lib/css/normalize.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
 	<!-- Personal CSS Libraries Go Here -->
@@ -16,6 +14,9 @@
 
 	<!--Javascript APIs Go Here -->
 	<script src="lib/js/angular.js"></script>
+	<script src="lib/js/angular-loader.js"></script>
+	<script src="lib/js/angular-touch.js"></script>
+	<script src="lib/js/angular-resource.js"></script>
 	<script src="lib/js/angular-ui-router.js"></script>
 
 	<!-- Personal JavaScript -->
@@ -30,18 +31,20 @@
 
 <body ng-app="myResponsiveApp">
 
-<div class="w3-top">
+<div class="w3-top" id="nav-top">
 	<!-- Navbar (sit on top) -->
-	<ul id="myNavbar" class="w3-navbar">
-		<li class="w3-hide-small">
+	<ul class="w3-navbar" id="myNavbar">
+		<li>
 			<a href="#home" class="w3-wide">THE JORGE LOPEZ</a>
 		</li>
 		<!-- Float links to the right -->
-		<li class="w3-right w3-hide-small"><a ui-sref="bio">ABOUT JORGE</a></li>
-		<li class="w3-right w3-hide-small"><a ui-sref="resume">RESUME</a></li>
-		<li class="w3-right w3-hide-small"><a href="#skills">SKILLS</a></li>
-		<li class="w3-right w3-hide-small"><a href="#code">CODE</a></li>
-		<li class="w3-right w3-hide-small"><a href="#projects">PROJECTS</a></li>
+		<li class="w3-right w3-hide-small">
+			<a href="#bio">ABOUT JORGE</a>
+			<a ng-href="#resume">RESUME</a>
+			<a href="#skills">SKILLS</a>
+			<a href="#promoCode">CODE</a>
+			<a href="#projects">PROJECTS</a>
+		</li>
 
 		<!-- Hide right-floated links on small screens and replace them with a menu icon -->
 		<li>
@@ -54,46 +57,33 @@
 <!-- Sidenav on small screens when clicking the menu icon -->
 <nav id="mySidenav" class="w3-sidenav w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" >
 	<a href="javascript:void(0)" onclick="w3_close()" class="w3-large w3-padding-16">Close x</a>
-	<a ui-sref="#bio">ABOUT JORGE</a>
-	<a ui-sref="#projects">PROJECTS</a>
-	<a ui-sref="#skills">SKILLS</a>
-	<a ui-sref="#code">CODE</a>
-	<a ui-sref="#resume">RESUME</a>
+	<a href="#bio">ABOUT JORGE</a>
+	<a href="#projects">PROJECTS</a>
+	<a href="#skills">SKILLS</a>
+	<a href="#code">CODE</a>
+	<a href="#resume">RESUME</a>
 </nav>
+<ui-view>
+	<!-- Header Section here -->
+	<div class="bgimg-1 w3-display-container w3-grayscale-min" id="home" ui-view="header"></div>
 
-<!-- About | Education Section here -->
-<div class="bgimg-1 w3-display-container w3-grayscale-min" id="home" ui-view="header"></div>
+	<!-- Main Section here -->
+	<div id="main" class="w3-main" ui-view="mainContent"></div>
 
-<!-- About | Education Section here -->
-<div id="main" class="w3-main" ui-view="mainContent"></div>
+	<!-- About Section here -->
+	<div id="about" class="w3-main" ui-state="about" ng-controller="aboutCtrl"></div>
 
-<!-- About | Education Section here -->
-<div id="bio" ui-view="bio"></div>
+	<!-- Promotional Section here -->
+	<div id="promo" class="w3-main" ui-view="promo" ng-controller="promoCtrl"></div>
 
-<!-- About | Education Section here -->
-<div id="edu" ui-view="edu"></div>
+	<!-- Footer Section here -->
+	<div class="w3-center w3-black w3-padding-64" ui-view="app.footer"></div>
+</ui-view>
 
-<!-- Promo | Resume Section here -->
-<div id="resume" ui-view="resume"></div>
-
-<!-- Promo | Skills Section here -->
-<div id="skills" ui-view="skills"></div>
-
-<!-- Promo | Code Section here -->
-<div id="code" ui-view="code"></div>
-
-<!-- Promo | Projects Section here -->
-<div id="projects" ui-view="projects"></div>
-
-<div id="projects2" ui-view="app.promo"></div>
-<div id="projects4" ui-view="app.presume"></div>
-
-<!-- div id="about" ng-include="'templates/about.html'"></div -->
-
-<div class="w3-center w3-black w3-padding-64" ui-view="footer"></div>
 
 <!--Javascript Frameworks Go here  -->
 <script src="js/w3css.js"></script>
+
 
 
 </body>
